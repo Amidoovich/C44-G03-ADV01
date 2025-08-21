@@ -7,8 +7,27 @@ using System.Threading.Tasks;
 namespace C44_G03_ADV01
 {
     
-    internal static class Helper<T>
+    internal static class Helper<T> 
     {
+        
+        
+        public static int LinearSearch(T[] arr,T value)
+        {
+            // && => false => short-circuit evaluation
+            // & => false => Long-circuit evaluation 
+            //if (arr is not null && arr.Length > 0 && value is not null)
+            if (arr?.Length > 0 && value is not null)
+            {
+                for(int i = 0; i < arr.Length; i++)
+                {
+                    //if (arr[i] == value)
+                    //if (arr[i]?.Equals(value) ?? false)
+                    if (value.Equals(arr[i]))
+                        return i;
+                }
+            }
+            return -1;
+        }
         
         public static void Print(T X)
         {
@@ -36,4 +55,6 @@ namespace C44_G03_ADV01
         //    b = temp;
         //}
     }
+
+    
 }

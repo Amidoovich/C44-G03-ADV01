@@ -21,5 +21,7 @@ namespace C44_G03_ADV01
         {
             return $"({X},{Y})";
         }
+
+        
     }
 }
