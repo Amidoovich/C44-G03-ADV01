@@ -32,14 +32,42 @@ namespace C44_G03_ADV01
 
         public override bool Equals(object? obj)
         {
-            Employee? employee = (Employee?)obj;
+            #region unsafe Way Using Explicit Casting
+            //Employee? employee = (Employee?)obj;
 
-            if(employee is not null)
-            {
-                return ((this.Id == employee.Id) && (this.Name == employee.Name) && (this.Salary == employee.Salary));
-            }
+            //if (employee is not null)
+            //{
+            //    return ((this.Id == employee.Id) && (this.Name == employee.Name) && (this.Salary == employee.Salary));
+            //}
 
-            return false;
+            //return false; 
+            #endregion
+
+            #region Safe Way Using Is Operator
+            //if (obj is Employee employee)
+            //{
+            //    return ((this.Id == employee.Id) && (this.Name == employee.Name) && (this.Salary == employee.Salary));
+            //}
+            //else
+            //{
+            //    return false;
+            //} 
+            #endregion
+
+            #region Safe Way Using As Operator
+
+            //Employee? employee = obj as Employee;
+
+            //if(employee is not null)
+            //{
+            //    return ((this.Id == employee.Id) && (this.Name == employee.Name) && (this.Salary == employee.Salary));
+            //}
+            //return false;
+
+            #endregion
+
+
+
         }
 
         public override int GetHashCode()
