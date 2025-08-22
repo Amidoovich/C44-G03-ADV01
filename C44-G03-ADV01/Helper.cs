@@ -7,12 +7,8 @@ using System.Threading.Tasks;
 namespace C44_G03_ADV01
 {
     
-    internal static class Helper<T> where T : IEquatable<T> , IComparable<T>
+    internal static class Helper<T> where T  : class ,IEquatable<T> , IComparable<T> , new()
     {
-        
-        
-        
-        
         public static void BubbleSort(T[] array)
         {
             if (array is null)

@@ -21,6 +21,10 @@ namespace C44_G03_ADV01
             Salary = salary;
             Age = age;
         }
+        public Employee()
+        {
+            
+        }
 
         public static bool operator ==(Employee left, Employee right)
         {
