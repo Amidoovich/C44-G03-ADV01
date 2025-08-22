@@ -99,7 +99,8 @@
                 new Employee(50, "Ahmed",10000)
             };
             Employee employee = new Employee(30, "Mona", 3000);
-            int Result = Helper<Employee>.LinearSearch(employees, employee);
+            //int Result = Helper<Employee>.LinearSearch(employees, employee, new EmployeeNameEqualityComparer());
+            int Result = Helper<Employee>.LinearSearch(employees, employee, new EmployeeIdEqualityComparer());
 
             Console.WriteLine(Result);
             #endregion

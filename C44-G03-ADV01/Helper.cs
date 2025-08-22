@@ -28,6 +28,21 @@ namespace C44_G03_ADV01
             }
             return -1;
         }
+        public static int LinearSearch(T[] arr,T value, IEqualityComparer<T> comparer)
+        {
+            // && => false => short-circuit evaluation
+            // & => false => Long-circuit evaluation 
+            //if (arr is not null && arr.Length > 0 && value is not null)
+            if (arr?.Length > 0 && value is not null)
+            {
+                for(int i = 0; i < arr.Length; i++)
+                {
+                    if (comparer.Equals(value, arr[i]))
+                        return i;
+                }
+            }
+            return -1;
+        }
         
         public static void Print(T X)
         {
