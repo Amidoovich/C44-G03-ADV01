@@ -116,18 +116,18 @@
 
             Employee[] employees =
             {
-                new Employee(10, "Amr",4000),
-                new Employee(20, "May",9000),
-                new Employee(30, "Mona",3000),
-                new Employee(40, "Omar",2000),
-                new Employee(50, "Ahmed",10000)
+                new Employee(10, "Amr",4000,20),
+                new Employee(20, "May",9000,25),
+                new Employee(30, "Mona",3000,30),
+                new Employee(40, "Omar",2000,28),
+                new Employee(50, "Ahmed",10000,40)
             };
 
-            Helper<Employee>.BubbleSort(employees);
+            Helper<Employee>.BubbleSort(employees,new EmployeeAgeComperer());
 
             foreach(Employee employee in employees)
             {
-                Console.WriteLine(employee.Salary);
+                Console.WriteLine(employee.Age);
             }
 
             #endregion

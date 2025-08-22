@@ -27,6 +27,20 @@ namespace C44_G03_ADV01
                 }
             }
         }
+        public static void BubbleSort(T[] array , IComparer<T> comparer)
+        {
+            if (array is null)
+                return;
+            for(int i = 0; i < array.Length; i++)
+            {
+                for(int j = 0; j < array.Length - 1 - i; j++)
+                {
+                    //if (array[j] > array[j+1])
+                    if (comparer.Compare(array[j], array[j+1]) > 0)
+                        Helper<T>.SWAP(ref array[j], ref array[j + 1]);
+                }
+            }
+        }
 
         public static int LinearSearch(T[] arr,T value)
         {

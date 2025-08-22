@@ -12,11 +12,14 @@ namespace C44_G03_ADV01
         public int Id { get; set; }
         public string? Name { get; set; }
         public decimal Salary { get; set; }
-        public Employee(int id, string? name, decimal salary)
+        public int Age { get; set; }
+
+        public Employee(int id, string? name, decimal salary, int age)
         {
             Id = id;
             Name = name;
             Salary = salary;
+            Age = age;
         }
 
         public static bool operator ==(Employee left, Employee right)
