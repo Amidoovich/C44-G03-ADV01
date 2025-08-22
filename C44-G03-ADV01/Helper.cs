@@ -7,10 +7,27 @@ using System.Threading.Tasks;
 namespace C44_G03_ADV01
 {
     
-    internal static class Helper<T> where T : IEquatable<T>
+    internal static class Helper<T> where T : IEquatable<T> , IComparable<T>
     {
         
         
+        
+        
+        public static void BubbleSort(T[] array)
+        {
+            if (array is null)
+                return;
+            for(int i = 0; i < array.Length; i++)
+            {
+                for(int j = 0; j < array.Length - 1 - i; j++)
+                {
+                    //if (array[j] > array[j+1])
+                    if (array[j].CompareTo(array[j+1]) > 0)
+                        Helper<T>.SWAP(ref array[j], ref array[j + 1]);
+                }
+            }
+        }
+
         public static int LinearSearch(T[] arr,T value)
         {
             // && => false => short-circuit evaluation

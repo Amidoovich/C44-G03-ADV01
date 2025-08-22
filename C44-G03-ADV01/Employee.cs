@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace C44_G03_ADV01
 {
-    internal class Employee : IEquatable<Employee>
+    internal class Employee : IEquatable<Employee> , IComparable<Employee>
     {
 
         public int Id { get; set; }
@@ -86,6 +86,11 @@ namespace C44_G03_ADV01
             {
                 return false;
             }
+        }
+
+        public int CompareTo(Employee? other)
+        {
+            return this.Salary.CompareTo(other?.Salary);
         }
     }
 }

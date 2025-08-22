@@ -90,6 +90,30 @@
             //Console.WriteLine(E01.GetHashCode());
             //Console.WriteLine(E02.GetHashCode());
 
+            //Employee[] employees =
+            //{
+            //    new Employee(10, "Amr",4000),
+            //    new Employee(20, "May",9000),
+            //    new Employee(30, "Mona",3000),
+            //    new Employee(40, "Omar",2000),
+            //    new Employee(50, "Ahmed",10000)
+            //};
+            //Employee employee = new Employee(30, "Mona", 3000);
+            ////int Result = Helper<Employee>.LinearSearch(employees, employee, new EmployeeNameEqualityComparer());
+            //int Result = Helper<Employee>.LinearSearch(employees, employee, new EmployeeIdEqualityComparer());
+
+            //Console.WriteLine(Result);
+            #endregion
+
+            #region BubbleSort
+            //int[] numbers = { 8, 4, 9, 7, 6, 10, 5, 3, 1, 2 };
+            //Helper<int>.BubbleSort(numbers);
+
+            //foreach(int i in numbers)
+            //{
+            //    Console.WriteLine(i);
+            //}
+
             Employee[] employees =
             {
                 new Employee(10, "Amr",4000),
@@ -98,14 +122,15 @@
                 new Employee(40, "Omar",2000),
                 new Employee(50, "Ahmed",10000)
             };
-            Employee employee = new Employee(30, "Mona", 3000);
-            //int Result = Helper<Employee>.LinearSearch(employees, employee, new EmployeeNameEqualityComparer());
-            int Result = Helper<Employee>.LinearSearch(employees, employee, new EmployeeIdEqualityComparer());
 
-            Console.WriteLine(Result);
+            Helper<Employee>.BubbleSort(employees);
+
+            foreach(Employee employee in employees)
+            {
+                Console.WriteLine(employee.Salary);
+            }
+
             #endregion
-
-
 
         }
     }
