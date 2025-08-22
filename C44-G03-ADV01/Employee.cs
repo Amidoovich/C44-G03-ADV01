@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace C44_G03_ADV01
 {
-    internal class Employee
+    internal class Employee : IEquatable<Employee>
     {
 
         public int Id { get; set; }
@@ -56,13 +56,13 @@ namespace C44_G03_ADV01
 
             #region Safe Way Using As Operator
 
-            //Employee? employee = obj as Employee;
+            Employee? employee = obj as Employee;
 
-            //if(employee is not null)
-            //{
-            //    return ((this.Id == employee.Id) && (this.Name == employee.Name) && (this.Salary == employee.Salary));
-            //}
-            //return false;
+            if (employee is not null)
+            {
+                return ((this.Id == employee.Id) && (this.Name == employee.Name) && (this.Salary == employee.Salary));
+            }
+            return false;
 
             #endregion
 
@@ -75,6 +75,17 @@ namespace C44_G03_ADV01
             //return Id.GetHashCode() + (Name?.GetHashCode() ?? 0) + Salary.GetHashCode();
             return HashCode.Combine(Id, Name, Salary);
         }
-      
+
+        public bool Equals(Employee? other)
+        {
+            if (other is not null)
+            {
+                return ((this.Id == other.Id) && (this.Name == other.Name) && (this.Salary == other.Salary));
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }

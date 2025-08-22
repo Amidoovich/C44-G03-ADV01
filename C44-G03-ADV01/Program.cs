@@ -79,16 +79,29 @@
             //Console.WriteLine(name01.GetHashCode());
             //Console.WriteLine(name02.GetHashCode());
 
-            Employee E01 = new Employee(10, "Mona", 9000);
-            Employee E02 = new Employee(10, "Mona", 9000);
+            //Employee E01 = new Employee(10, "Mona", 9000);
+            //Employee E02 = new Employee(10, "Mona", 9000);
 
-            if (E01.Equals(E02))
-                Console.WriteLine("Equals");
-            else
-                Console.WriteLine("Not Equals");
+            //if (E01.Equals(E02))
+            //    Console.WriteLine("Equals");
+            //else
+            //    Console.WriteLine("Not Equals");
 
-            Console.WriteLine(E01.GetHashCode());
-            Console.WriteLine(E02.GetHashCode());
+            //Console.WriteLine(E01.GetHashCode());
+            //Console.WriteLine(E02.GetHashCode());
+
+            Employee[] employees =
+            {
+                new Employee(10, "Amr",4000),
+                new Employee(20, "May",9000),
+                new Employee(30, "Mona",3000),
+                new Employee(40, "Omar",2000),
+                new Employee(50, "Ahmed",10000)
+            };
+            Employee employee = new Employee(30, "Mona", 3000);
+            int Result = Helper<Employee>.LinearSearch(employees, employee);
+
+            Console.WriteLine(Result);
             #endregion
 
 

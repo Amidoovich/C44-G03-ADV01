@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace C44_G03_ADV01
 {
     
-    internal static class Helper<T> 
+    internal static class Helper<T> where T : IEquatable<T>
     {
         
         
