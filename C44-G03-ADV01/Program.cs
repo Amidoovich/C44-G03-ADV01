@@ -94,6 +94,22 @@ namespace C44_G03_ADV01
             //}
 
             #endregion
+
+            #region Q4
+
+            //FixedSizeList<int> fixedSizeList = new FixedSizeList<int>(3);
+
+            //fixedSizeList.Add(1);
+            //fixedSizeList.Add(2);
+            //fixedSizeList.Add(3);
+
+
+            //for (int i = 0; i < fixedSizeList.Capacity; i++)
+            //{
+            //    Console.WriteLine(fixedSizeList.Get(i));
+            //}
+
+            #endregion
         }
     }
 }
