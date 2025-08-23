@@ -44,6 +44,29 @@ namespace C44_G03_ADV01
             return evenNumbers;
         }
 
+        public static int findFirstNon_RepeatedCharacter(string name)
+        {
+            for (int i = 0; i < name.Length; i++)
+            {
+
+                bool flag = false;
+                for(int j = 0; j < name.Length; j++)
+                {
+                    if (name[i] == name[j] && i != j )
+                    {
+                        flag = true;
+                        break;
+                    }
+                }
+                if (!flag)
+                {
+                    return i;
+                }
+
+            }
+            return -1;
+        }
+
         static void Main(string[] args)
         {
             #region Q1
@@ -108,6 +131,15 @@ namespace C44_G03_ADV01
             //{
             //    Console.WriteLine(fixedSizeList.Get(i));
             //}
+
+            #endregion
+
+            #region Q5
+
+            //string Name = "mohamed";
+
+            //Console.WriteLine(findFirstNon_RepeatedCharacter(Name));
+
 
             #endregion
         }
