@@ -44,8 +44,14 @@ namespace C44_G03_ADV01
             return evenNumbers;
         }
 
-        public static int findFirstNon_RepeatedCharacter(string name)
+        public static int findFirstNon_RepeatedCharacter(string? name)
         {
+            if(name is null)
+            {
+                Console.WriteLine("the String Is Null");
+                return -1;
+            }
+
             for (int i = 0; i < name.Length; i++)
             {
 
@@ -136,7 +142,7 @@ namespace C44_G03_ADV01
 
             #region Q5
 
-            //string Name = "mohamed";
+            //string? Name = "Ahmed";
 
             //Console.WriteLine(findFirstNon_RepeatedCharacter(Name));
 
