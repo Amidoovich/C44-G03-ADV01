@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace C44_G03_ADV01
 {
-    internal class Range<T> where T : INumber<T>
+    internal class Range<T> where T : IComparable<T>
     {
         public T Max { get; }
         public T Min { get; }
@@ -27,7 +27,7 @@ namespace C44_G03_ADV01
 
         public T length()
         { 
-            return  Max - Min;
+            return  (dynamic)Max - (dynamic)Min;
         }
     }
 }
