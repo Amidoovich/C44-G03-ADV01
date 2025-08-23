@@ -19,10 +19,29 @@ namespace C44_G03_ADV01
 
             for (int i = 0; i < Length / 2; i++)
             {
-                var temp = arr[i];
+                object temp = arr[i];
                 arr[i] = arr[Length - i - 1];
                 arr[Length - i - 1] = temp;
             }
+        }
+
+        public static List<int> PrintEvenInNumbers(List<int> numbers)
+        {
+            if (numbers is null)
+            {
+                Console.WriteLine("the List Is Null");
+                return new List<int>();
+            }
+            List<int> evenNumbers = new List<int>();
+            for (int i = 0; i < numbers.Count; i++)
+            {
+                if (numbers[i] % 2 == 0)
+                {
+                    evenNumbers.Add(numbers[i]);
+                    
+                }
+            }
+            return evenNumbers;
         }
 
         static void Main(string[] args)
@@ -46,20 +65,33 @@ namespace C44_G03_ADV01
             #endregion
 
             #region Q2
-            ArrayList arrayList = new ArrayList() {1,2,3,4,5};
+            //ArrayList arrayList = new ArrayList() { 1, 2, 3, 4, 5, 5.5 ,"Ahmed"};
 
-            foreach (int i in arrayList)
-            {
-                Console.WriteLine(i);
-            }
+            //foreach (object i in arrayList)
+            //{
+            //    Console.WriteLine(i);
+            //}
 
-            MyReverse(arrayList);
-            Console.WriteLine("After Reverse");
+            //MyReverse(arrayList);
+            //Console.WriteLine("After Reverse");
 
-            foreach (int i in arrayList)
-            {
-                Console.WriteLine(i);
-            }
+            //foreach (object i in arrayList)
+            //{
+            //    Console.WriteLine(i);
+            //}
+
+            #endregion
+
+            #region Q3
+
+            //List<int> Numbers = new List<int>() { 1, 2, 3, 4, 5, 6 };
+
+            //List<int> EvenNumbers = PrintEvenInNumbers(Numbers);
+
+            //foreach (int i in EvenNumbers)
+            //{
+            //    Console.WriteLine(i);
+            //}
 
             #endregion
         }
